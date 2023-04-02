@@ -23,6 +23,7 @@ const LoginScreen = ({ navigation }) => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#0061FF",
       }}
     >
       <View style={[styles.card, styles.dropShadow]}>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   inputField: {
-    marginBottom: 10,
+    marginBottom: 20,
     fontSize: 16,
     borderBottomColor: "#8aa7ff",
     borderBottomWidth: 1,
@@ -86,8 +87,8 @@ const styles = StyleSheet.create({
   card: {
     width: 300,
     backgroundColor: "white",
-    paddingVertical: 45,
-    paddingHorizontal: 25,
+    paddingVertical: 30,
+    paddingHorizontal: 30,
     width: "80%",
     marginVertical: 10,
     borderRadius: 8,
