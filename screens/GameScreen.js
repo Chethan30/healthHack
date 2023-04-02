@@ -3,6 +3,8 @@ import {
   StyleSheet,
   View,
   Text,
+  Image, 
+  ScrollView
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -11,26 +13,30 @@ const GameScreen = () => {
   const [previousMaxStreakCount, setpreviousMaxStreakCount] = useState(12);
   const [pointsCollected, setPointsCollected] = useState(45);
   const [pointsWorth, setPointsWorth] = useState(3.75);
+  const [image, setImage] = useState(require('../Image/chart1.png'));
 
   const handleSuccess = () => {
     setStreakCount(streakCount+1);
     setPointsWorth(pointsWorth/10 + pointsWorth);
     setPointsCollected(pointsWorth/100 + pointsCollected);
+    setImage(require('../Image/chart2.png'));
   }
   const handleFailure = () => {
     setpreviousMaxStreakCount(streakCount);
     setStreakCount(0);
     setPointsWorth(0);
     setPointsCollected(0);
+    setImage(require('../Image/chart3.png'));
   }
   return ( 
-    <View
+    <ScrollView
       style={{
         backgroundColor: "#0061FF",
         height: "100%",
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         paddingVertical: 20,
-      }}
+      }
+    }
     >
       <View style={styles.card}>
         <Text style={{ fontWeight: "bold", fontSize: 24, marginBottom: 12 }}>
@@ -47,7 +53,7 @@ const GameScreen = () => {
         <Text style={{ marginBottom: 8,  fontSize: 20 }}>
           Previous Max Streak Count : {previousMaxStreakCount}
         </Text>
-
+        <Image style={styles.imageContainer} source = {image}></Image>
       </View>
       <View style={styles.card}>
         <Text style={{ fontWeight: "bold", fontSize: 24, marginBottom: 12 }}>
@@ -69,7 +75,7 @@ const GameScreen = () => {
           <Text style={[styles.heading2, {backgroundColor:'lightblue', padding: 20, alignSelf:'center'}]}>Click to start new streak</Text>
           </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -108,6 +114,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
   },
+  imageContainer:{
+    width: 340, 
+    height: 220, 
+    borderRadius: 10,
+  }
 });
 
 export default GameScreen;
