@@ -21,7 +21,13 @@ const HomeScreen = () => {
     >
       <View style={styles.card}>
         <Text style={{ fontWeight: "bold", fontSize: 24, marginBottom: 12 }}>
-          Previous Appointments
+          Previous Appointment
+        </Text>
+        <Text style={{ marginBottom: 8 }}>
+          <Text style={[styles.heading, { color: "lightblue" }]}>
+            Patient :{" "}
+          </Text>
+          <Text style={styles.ans}>John Doe</Text>
         </Text>
         <Text style={{ marginBottom: 8 }}>
           <Text style={styles.heading}>Diagnosis : </Text>
