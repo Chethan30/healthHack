@@ -5,6 +5,8 @@ import { FontAwesome } from "react-native-vector-icons";
 
 import HomeScreen from "./HomeScreen";
 import LoginScreen from "./LoginScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import DiagnosisScreen from "../screens/DiagnonsisScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,8 +31,8 @@ const MyTabs = () => {
         }}
       />
       <Tab.Screen
-        name="Medicine"
-        component={LoginScreen}
+        name="Diagnosis"
+        component={DiagnosisScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="stethoscope" color={color} size={size} />
@@ -39,7 +41,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={LoginScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="user" color={color} size={size} />
