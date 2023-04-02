@@ -7,7 +7,7 @@ import HomeScreen from "./HomeScreen";
 import LoginScreen from "./LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import DiagnosisScreen from "../screens/DiagnonsisScreen";
-
+import HospitalListScreen from "../screens/HospitalListScreen";
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
