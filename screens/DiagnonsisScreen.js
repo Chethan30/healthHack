@@ -89,7 +89,7 @@ const DiagnonsisScreen = () => {
 
   return (
     <SafeAreaView>
-      <View>
+      <View style={{ backgroundColor: "#0061FF" }}>
         <Text>{count}</Text>
         <Text>{question}</Text>
         {count == 1 ? (
