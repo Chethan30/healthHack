@@ -7,6 +7,7 @@ import HomeScreen from "./HomeScreen";
 import LoginScreen from "./LoginScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import DiagnosisScreen from "../screens/DiagnonsisScreen";
+import GameScreen from "../screens/GameScreen";
 import HospitalListScreen from "../screens/HospitalListScreen";
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +37,15 @@ const MyTabs = () => {
         options={{
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="stethoscope" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Medicine"
+        component={GameScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="hospital" color={color} size={size} />
           ),
         }}
       />
