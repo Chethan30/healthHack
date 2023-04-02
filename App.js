@@ -1,30 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
 
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoginScreen from "./pages/LoginScreen";
+import MyTabs from "./pages/MyTabs";
 
-// import ProfileScreen from './screens/ProfileScreen';
-import DiagnonsisScreen from './screens/DiagnonsisScreen';
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return <AppContainer />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ title: "Welcome" }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={MyTabs}
+          options={{ title: "Home" }}
+        />
+      </Stack.Navigator>
+      {/* <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+        <StatusBar style="auto" />
+      </View> */}
+    </NavigationContainer>
+  );
 }
-
-
-const MainNavigator = createStackNavigator({
-  //Profile: ProfileScreen,
-  Diagnonsis_Screen: DiagnonsisScreen,
-});
-
-
-const AppContainer = createAppContainer(MainNavigator);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
